@@ -7,7 +7,8 @@ version: '3.7'
 # {"auths":{},"credsStore":"","stackOrchestrator":"swarm"}
 services:
   todo-web-application:
-    image: in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
+    container_name: todo-web-application
+    image: pmmalca/todo-web-application-mysql:0.0.1-SNAPSHOT
     #build:
       #context: .
       #dockerfile: Dockerfile
@@ -24,6 +25,7 @@ services:
       RDS_PASSWORD: dummytodos
 
   mysql:
+    container_name: mysql
     image: mysql:5.7
     ports:
       - "3306:3306"

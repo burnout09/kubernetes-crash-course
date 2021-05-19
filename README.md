@@ -467,6 +467,8 @@ kubectl edit configmap todo-web-application-config
 kubectl scale deployment todo-web-application --replicas=0
 kubectl scale deployment todo-web-application --replicas=1
 
+echo -n 'admin' | base64
+
 kubectl create secret generic todo-web-application-secrets --from-literal=RDS_PASSWORD=dummytodos
 kubectl get secret/todo-web-application-secrets
 kubectl describe secret/todo-web-application-secrets
